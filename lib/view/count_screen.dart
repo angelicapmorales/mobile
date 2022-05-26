@@ -10,6 +10,24 @@ class CountScreen extends StatefulWidget {
 class _ContadorState extends State<CountScreen> {
   int count = 0;
 
+  void increasefn() {
+    setState(() {
+      count++;
+    });
+  }
+
+  void decreasefn() {
+    setState(() {
+      count--;
+    });
+  }
+
+  void restartfn() {
+    setState(() {
+      count = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     const sizeText = TextStyle(fontSize: 25);
@@ -32,19 +50,40 @@ class _ContadorState extends State<CountScreen> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () {
-          setState(() {
-            count++;
-          });
-          showMessage();
-        },
-      ),
+      floatingActionButton: FloatingCustomW(
+          increase: increasefn, decrease: decreasefn, restart: restartfn),
     );
   }
+}
 
-  void showMessage() {
-    print('HI, Again');
+class FloatingCustomW extends StatelessWidget {
+  final Function increase;
+  final Function decrease;
+  final Function restart;
+  const FloatingCustomW({
+    Key? key,
+    required this.increase,
+    required this.decrease,
+    required this.restart,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        FloatingActionButton(
+          child: const Icon(Icons.add),
+          onPressed: () => increase(),
+        ),
+        FloatingActionButton(
+          child: const Icon(Icons.exposure_minus_1),
+          onPressed: () => decrease(),
+        ),
+        FloatingActionButton(
+          child: const Icon(Icons.restart_alt),
+          onPressed: () => restart(),
+        ),
+      ],
+    );
   }
 }
