@@ -88,20 +88,36 @@ class ListView1 extends StatelessWidget {
             itemBuilder: (_, index) {
               return ListTile(
                   leading: GestureDetector(
-                      onTap: () {
-                          var snackBar = SnackBar(content:Image(image:Image.network(_games[index]["image"]!).image));
-                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                      },
+                      onTap: () => showDialog<Image>(context: context, builder: (BuildContext context) => AlertDialog(
+                        content:Image(image:Image.network(_games[index]["image"]!).image 
+                      ),
+                      actions: [
+                        TextButton(  
+                        child:const Center(child: Text("OK")),  
+                        onPressed: () {  
+                          Navigator.of(context).pop();  
+                        },  
+                      ),  
+                      ],
+                      )),
                       child: CircleAvatar(
                     backgroundImage:
                         Image.network(_games[index]["image"]!).image,
                   ),
                   ),
                   title: GestureDetector(
-                      onTap: () {
-                          var snackBar = SnackBar(content:Image(image:Image.network(_games[index]["image"]!).image));
-                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                      },
+                      onTap: () => showDialog<Image>(context: context, builder: (BuildContext context) => AlertDialog(
+                      content:Image(image:Image.network(_games[index]["image"]!).image 
+                      ),
+                      actions: [
+                        TextButton(  
+                        child:const Center(child: Text("OK")),  
+                        onPressed: () {  
+                          Navigator.of(context).pop();  
+                        },  
+                      ),  
+                      ],
+                      )),
                       child: Stack(
                         children: [
                           Text(_games[index]["name"]!)
