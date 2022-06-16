@@ -89,7 +89,7 @@ class ListView1 extends StatelessWidget {
               return ListTile(
                   leading: GestureDetector(
                       onTap: () => showDialog<Image>(context: context, builder: (BuildContext context) => AlertDialog(
-                        content:Image(image:Image.network(_games[index]["image"]!).image 
+                        content:Image(image:Image.network(_games[index]["image"]!).image, 
                       ),
                       actions: [
                         TextButton(  
@@ -124,7 +124,6 @@ class ListView1 extends StatelessWidget {
                         ],
                       )
                   ));
-        
             }));
   }
 }
