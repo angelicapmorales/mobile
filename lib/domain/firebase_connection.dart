@@ -12,8 +12,8 @@ class FirebaseConnection {
  
   }
 
-    Future<ResponseFirebase> getData() async{
-  try{
+  Future<ResponseFirebase> getData() async{
+    try{
     DatabaseReference registros = instanceFirebase();
     DataSnapshot response = await registros.get();
     final responseMap = Map<String, dynamic>.from(response.value as Map);
