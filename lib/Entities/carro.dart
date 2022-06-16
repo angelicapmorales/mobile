@@ -14,4 +14,8 @@ class Carro{
       placa: json['placa'],
     );
   }
+   @override
+  String toString() {
+    return 'Carro color: $color, marca: $marca, modelo: $modelo, placa: $placa';
+  }
 }
