@@ -7,8 +7,11 @@ class ResponseFirebase{
   ResponseFirebase({this.registros});
 
   ResponseFirebase.fromJson(List<dynamic> json) {
-    registros = json.map((e) => Registros.fromJson(Map<String, dynamic>.from(e as Map))).toList();
-  } 
+    registros = json
+        .map((e) => Registros.fromJson(Map<String, dynamic>.from(e as Map)))
+        .toList();
+  }
+}
 
   // ResponseFirebase.fromJson(Map<String, dynamic> json) {
 
@@ -21,4 +24,3 @@ class ResponseFirebase{
   //   }
   // }
   
-}

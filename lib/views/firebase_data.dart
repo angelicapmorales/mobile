@@ -100,6 +100,7 @@ class _GetFireBaseState extends State<GetFireBase> {
 
   void callDatabase() async {
     final response = await connection.getData();
+    if (!mounted) return;
     setState(() {
       registros = response.registros!;
     });
