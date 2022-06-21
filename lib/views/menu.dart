@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:third_application/views/card.dart';
+// import 'package:third_application/views/card.dart';
 import 'package:third_application/views/firebase_data.dart';
 import 'package:third_application/views/list_view1.dart';
 import 'package:third_application/views/profile.dart';
