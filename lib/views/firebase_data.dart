@@ -18,7 +18,7 @@ class _GetFireBaseState extends State<GetFireBase> {
     callDatabase();
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Cars"),
+          title: const Text("Clients and cars"),
         ),
         body: ListView.builder(
             itemCount: registros.length,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:third_application/views/card.dart';
 
 class ListView1 extends StatelessWidget {
   ListView1({Key? key}) : super(key: key);
@@ -120,7 +121,7 @@ class ListView1 extends StatelessWidget {
                       )),
                       child: Stack(
                         children: [
-                          Text(_games[index]["name"]!)
+                          CardCustom(_games,index)
                         ],
                       )
                   ));

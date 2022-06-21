@@ -3,6 +3,7 @@ import 'package:third_application/views/card.dart';
 import 'package:third_application/views/firebase_data.dart';
 import 'package:third_application/views/list_view1.dart';
 import 'package:third_application/views/profile.dart';
+import 'package:third_application/views/profile1.dart';
 
 
 class Menu extends StatefulWidget {
@@ -21,9 +22,9 @@ class MenuS extends State<Menu> {
 
   static final List<Widget> _widgetOptions= <Widget>[
 
-    const Text('Index 0: Home', style: optionStyle),
+    const Text('Home', style: optionStyle),
     const GetFireBase(),
-    const CardCustom(),
+    const Profile1(),
     
   ];
 
